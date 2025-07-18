@@ -1,0 +1,12 @@
+name: mtuci
+services:
+    nginx:
+        container_name: nginx
+        volumes:
+            - ./site/:/usr/share/nginx/html:ro
+            - ./certs/:/etc/nginx/certs
+            - ./nginx/:/etc/nginx/conf.d/
+        ports:
+            - 80:80
+            - 443:443
+        image: nginx:stable
